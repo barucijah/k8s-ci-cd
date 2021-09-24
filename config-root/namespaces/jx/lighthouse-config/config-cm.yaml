@@ -41,7 +41,7 @@ data:
         - needs-rebase
         repos:
         - barucijah/k8s-ci-cd
-      target_url: http://lighthouse-jx./merge/status
+      target_url: http://lighthouse-jx.34.123.58.147.nip.io/merge/status
 kind: ConfigMap
 metadata:
   creationTimestamp: null
