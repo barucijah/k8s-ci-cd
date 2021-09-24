@@ -1,0 +1,10 @@
+# Source: k8s-node/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: k8s-node-k8s-node
+  annotations:
+    meta.helm.sh/release-name: 'k8s-node'
+  namespace: jx-staging
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
