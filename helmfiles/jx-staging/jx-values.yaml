@@ -20,16 +20,24 @@ jxRequirements:
     enabled: false
     schedule: ""
   cluster:
+    chartRepository: http://jenkins-x-chartmuseum.jx.svc.cluster.local:8080
+    clusterName: tf-jx-included-vervet
     devEnvApprovers:
     - todo
     environmentGitOwner: todo
     gitKind: github
     gitName: github
     gitServer: https://github.com
+    gke:
+      projectNumber: "1061424915189"
+    project: vocal-tracer-324708
     provider: gke
     registry: gcr.io
+    zone: us-central1-a
   environments:
   - key: dev
+    owner: barucijah
+    repository: k8s-ci-cd
   - key: staging
   - key: production
   ingress:
@@ -39,17 +47,33 @@ jxRequirements:
     tls:
       email: ""
       enabled: false
-      production: false
+      production: true
+  kuberhealthy: true
+  pipelineUser:
+    username: barucijah
   repository: nexus
   secretStorage: vault
-  vault: {}
+  storage:
+  - name: logs
+    url: gs://logs-tf-jx-included-vervet-8b5a0c260507
+  - name: reports
+    url: gs://reports-tf-jx-included-vervet-8b5a0c260507
+  - name: repository
+    url: gs://repository-tf-jx-included-vervet-8b5a0c260507
+  terraformVault: true
+  vault:
+    bucket: vault-tf-jx-included-vervet-8b5a0c260507
+    key: crypto-key-tf-jx-included-vervet-8b5a0c260507
+    keyring: keyring-tf-jx-included-vervet-8b5a0c260507
+    name: tf-jx-included-vervet
+    serviceAccount: tf-jx-included-vervet-vt
   webhook: lighthouse
 jxRequirementsIngressExternalDNS:
   enabled: false
 jxRequirementsIngressTLS:
   enabled: false
 jxRequirementsKuberhealthy:
-  enabled: false
+  enabled: true
 jxRequirementsTLSCheck:
   enabled: false
 jxRequirementsVault:
