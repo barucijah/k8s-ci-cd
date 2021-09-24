@@ -8,6 +8,7 @@ data:
     in_repo_config:
       enabled:
         barucijah/k8s-ci-cd: true
+        barucijah/k8s-node: true
     plank: {}
     pod_namespace: jx
     prowjob_namespace: jx
@@ -20,6 +21,7 @@ data:
         skip-unknown-contexts: false
       merge_method:
         barucijah/k8s-ci-cd: merge
+        barucijah/k8s-node: merge
       queries:
       - labels:
         - approved
@@ -31,6 +33,7 @@ data:
         - needs-rebase
         repos:
         - barucijah/k8s-ci-cd
+        - barucijah/k8s-node
       - labels:
         - updatebot
         missingLabels:
@@ -41,6 +44,7 @@ data:
         - needs-rebase
         repos:
         - barucijah/k8s-ci-cd
+        - barucijah/k8s-node
       target_url: http://lighthouse-jx.34.123.58.147.nip.io/merge/status
 kind: ConfigMap
 metadata:

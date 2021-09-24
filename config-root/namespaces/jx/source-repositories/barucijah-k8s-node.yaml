@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: barucijah
+    provider: github
+    repository: k8s-node
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: barucijah-k8s-node
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/barucijah/k8s-node.git
+  org: barucijah
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: k8s-node
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/barucijah/k8s-node
