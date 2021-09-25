@@ -8,6 +8,7 @@ spec:
     provider: https://github.com
     providerKind: github
     repositories:
+    - name: k8s-app
     - name: k8s-node
     scheduler: in-repo
   - owner: home
