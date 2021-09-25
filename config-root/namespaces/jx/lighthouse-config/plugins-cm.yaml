@@ -8,6 +8,10 @@ data:
       require_self_approval: true
     - lgtm_acts_as_approve: true
       repos:
+      - barucijah/k8s-app
+      require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
       - barucijah/k8s-node
       require_self_approval: true
     - lgtm_acts_as_approve: true
@@ -24,6 +28,11 @@ data:
         env/prow/plugins.yaml:
           name: plugins
     external_plugins:
+      barucijah/k8s-app:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
       barucijah/k8s-ci-cd:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
@@ -44,6 +53,22 @@ data:
       additional_labels: null
     owners: {}
     plugins:
+      barucijah/k8s-app:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
       barucijah/k8s-ci-cd:
       - config-updater
       - approve
@@ -104,6 +129,9 @@ data:
     triggers:
     - repos:
       - barucijah/k8s-ci-cd
+      trusted_org: todo
+    - repos:
+      - barucijah/k8s-app
       trusted_org: todo
     - repos:
       - barucijah/k8s-node

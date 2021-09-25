@@ -7,6 +7,7 @@ data:
       LinkURL: null
     in_repo_config:
       enabled:
+        barucijah/k8s-app: true
         barucijah/k8s-ci-cd: true
         barucijah/k8s-node: true
         home/app.bundle: true
@@ -21,6 +22,7 @@ data:
         required-if-present-contexts: null
         skip-unknown-contexts: false
       merge_method:
+        barucijah/k8s-app: merge
         barucijah/k8s-ci-cd: merge
         barucijah/k8s-node: merge
         home/app.bundle: merge
@@ -35,6 +37,7 @@ data:
         - needs-rebase
         repos:
         - barucijah/k8s-ci-cd
+        - barucijah/k8s-app
         - barucijah/k8s-node
         - home/app.bundle
       - labels:
@@ -47,6 +50,7 @@ data:
         - needs-rebase
         repos:
         - barucijah/k8s-ci-cd
+        - barucijah/k8s-app
         - barucijah/k8s-node
         - home/app.bundle
       target_url: http://lighthouse-jx.34.123.58.147.nip.io/merge/status
