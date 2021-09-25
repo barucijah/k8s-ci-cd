@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: home
+    provider: github
+    repository: app.bundle
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: home-app-bundle
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/home/app.bundle.git
+  org: home
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: app.bundle
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/home/app.bundle

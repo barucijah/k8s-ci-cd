@@ -10,6 +10,12 @@ spec:
     repositories:
     - name: k8s-node
     scheduler: in-repo
+  - owner: home
+    provider: https://github.com
+    providerKind: github
+    repositories:
+    - name: app.bundle
+    scheduler: in-repo
   slack:
     channel: '#jenkins-x-pipelines'
     kind: failureOrNextSuccess
