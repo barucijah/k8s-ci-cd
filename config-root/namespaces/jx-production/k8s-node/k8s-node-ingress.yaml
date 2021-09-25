@@ -1,0 +1,22 @@
+# Source: k8s-node/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    meta.helm.sh/release-name: 'k8s-node'
+  name: k8s-node
+  namespace: jx-production
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: ImplementationSpecific
+            backend:
+              service:
+                name: k8s-node
+                port:
+                  number: 80
+      host: k8s-node-jx-production.34.123.58.147.nip.io
