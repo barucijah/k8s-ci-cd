@@ -5,7 +5,7 @@ metadata:
   name: k8s-node-k8s-node
   labels:
     draft: draft-app
-    chart: "k8s-node-0.0.2"
+    chart: "k8s-node-0.0.3"
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'k8s-node'
@@ -25,11 +25,11 @@ spec:
       serviceAccountName: k8s-node-k8s-node
       containers:
         - name: k8s-node
-          image: "gcr.io/vocal-tracer-324708/k8s-node:0.0.2"
+          image: "gcr.io/vocal-tracer-324708/k8s-node:0.0.3"
           imagePullPolicy: IfNotPresent
           env:
             - name: VERSION
-              value: 0.0.2
+              value: 0.0.3
           envFrom: null
           ports:
             - name: http

@@ -15,7 +15,7 @@ releases:
   values:
   - jx-values.yaml
 - chart: dev/k8s-node
-  version: 0.0.2
+  version: 0.0.3
   name: k8s-node
   namespace: jx-staging
   values:
