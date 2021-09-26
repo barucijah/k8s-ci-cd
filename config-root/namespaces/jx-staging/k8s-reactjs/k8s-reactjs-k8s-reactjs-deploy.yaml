@@ -1,0 +1,60 @@
+# Source: k8s-reactjs/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-reactjs-k8s-reactjs
+  labels:
+    draft: draft-app
+    chart: "k8s-reactjs-0.0.1"
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  annotations:
+    meta.helm.sh/release-name: 'k8s-reactjs'
+    wave.pusher.com/update-on-config-change: 'true'
+  namespace: jx-staging
+spec:
+  selector:
+    matchLabels:
+      app: k8s-reactjs-k8s-reactjs
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        draft: draft-app
+        app: k8s-reactjs-k8s-reactjs
+    spec:
+      serviceAccountName: k8s-reactjs-k8s-reactjs
+      containers:
+        - name: k8s-reactjs
+          image: "gcr.io/vocal-tracer-324708/k8s-reactjs:0.0.1"
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: VERSION
+              value: 0.0.1
+          envFrom: null
+          ports:
+            - name: http
+              containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
+          resources:
+            limits:
+              cpu: 400m
+              memory: 256Mi
+            requests:
+              cpu: 200m
+              memory: 128Mi
+      terminationGracePeriodSeconds:
+      imagePullSecrets:
