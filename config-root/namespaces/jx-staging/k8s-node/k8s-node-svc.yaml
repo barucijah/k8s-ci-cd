@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: k8s-node
   labels:
-    chart: "k8s-node-0.0.4"
+    chart: "k8s-node-0.0.5"
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'k8s-node'
@@ -13,7 +13,7 @@ spec:
   type: ClusterIP
   ports:
     - port: 80
-      targetPort: 3000
+      targetPort: 8080
       protocol: TCP
       name: http
   selector:
