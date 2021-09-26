@@ -20,5 +20,9 @@ releases:
   namespace: jx-staging
   values:
   - jx-values.yaml
+- chart: dev/k8s-reactjs
+  version: 0.0.1
+  name: k8s-reactjs
+  namespace: jx-staging
 templates: {}
 renderedvalues: {}
