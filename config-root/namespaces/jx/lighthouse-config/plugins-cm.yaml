@@ -16,6 +16,10 @@ data:
       require_self_approval: true
     - lgtm_acts_as_approve: true
       repos:
+      - barucijah/k8s-reactjs
+      require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
       - home/app.bundle
       require_self_approval: true
     cat: {}
@@ -39,6 +43,11 @@ data:
       - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
         name: lighthouse-webui-plugin
       barucijah/k8s-node:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
+      barucijah/k8s-reactjs:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
       - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
@@ -102,6 +111,22 @@ data:
       - cat
       - dog
       - pony
+      barucijah/k8s-reactjs:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
       home/app.bundle:
       - approve
       - assign
@@ -135,6 +160,9 @@ data:
       trusted_org: todo
     - repos:
       - barucijah/k8s-node
+      trusted_org: todo
+    - repos:
+      - barucijah/k8s-reactjs
       trusted_org: todo
     - repos:
       - home/app.bundle
