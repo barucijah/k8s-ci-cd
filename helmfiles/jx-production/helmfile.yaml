@@ -6,11 +6,17 @@ environments:
 repositories:
 - name: jxgh
   url: https://jenkins-x-charts.github.io/repo
+- name: dev
+  url: http://chartmuseum-jx.34.123.58.147.nip.io
 releases:
 - chart: jxgh/jx-verify
   name: jx-verify
   namespace: jx-production
   values:
   - jx-values.yaml
+- chart: dev/k8s-node
+  version: 0.0.3
+  name: k8s-node
+  namespace: jx-production
 templates: {}
 renderedvalues: {}
