@@ -16,6 +16,18 @@
     repositoryName: jxgh
     repositoryUrl: https://jenkins-x-charts.github.io/repo
     resourcePath: config-root/namespaces/jx-production/jx-verify
+  - apiVersion: v1
+    appVersion: 0.0.5
+    description: A Helm chart for Kubernetes
+    firstDeployed: "2021-09-27T08:45:19Z"
+    icon: https://raw.githubusercontent.com/cdfoundation/artwork/master/jenkinsx/icon/color/jenkinsx-icon-color.png
+    lastDeployed: "2021-09-27T08:45:19Z"
+    logsUrl: https://console.cloud.google.com/logs/viewer?authuser=1&project=vocal-tracer-324708&minLogLevel=0&expandAll=false&customFacets=&limitCustomFacetWidth=true&interval=PT1H&resource=k8s_container%2Fcluster_name%2Ftf-jx-included-vervet%2Fnamespace_name%2Fjx-production%2Fcontainer_name%2Fk8s-reactjs&dateRangeUnbound=both
+    name: k8s-reactjs
+    repositoryName: dev
+    repositoryUrl: http://chartmuseum-jx.34.123.58.147.nip.io
+    resourcePath: config-root/namespaces/jx-production/k8s-reactjs
+    version: 0.0.5
 - namespace: jx-staging
   path: helmfiles/jx-staging/helmfile.yaml
   releases:
