@@ -9,6 +9,7 @@ spec:
     providerKind: github
     repositories:
     - name: k8s-app
+    - name: k8s-nestjs
     - name: k8s-node
     - name: k8s-reactjs
     scheduler: in-repo
