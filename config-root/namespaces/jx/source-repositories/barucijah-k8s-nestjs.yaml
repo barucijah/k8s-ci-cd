@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: barucijah
+    provider: github
+    repository: k8s-nestjs
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: barucijah-k8s-nestjs
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/barucijah/k8s-nestjs.git
+  org: barucijah
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: k8s-nestjs
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/barucijah/k8s-nestjs

@@ -9,6 +9,7 @@ data:
       enabled:
         barucijah/k8s-app: true
         barucijah/k8s-ci-cd: true
+        barucijah/k8s-nestjs: true
         barucijah/k8s-node: true
         barucijah/k8s-reactjs: true
         home/app.bundle: true
@@ -25,6 +26,7 @@ data:
       merge_method:
         barucijah/k8s-app: merge
         barucijah/k8s-ci-cd: merge
+        barucijah/k8s-nestjs: merge
         barucijah/k8s-node: merge
         barucijah/k8s-reactjs: merge
         home/app.bundle: merge
@@ -40,6 +42,7 @@ data:
         repos:
         - barucijah/k8s-ci-cd
         - barucijah/k8s-app
+        - barucijah/k8s-nestjs
         - barucijah/k8s-node
         - barucijah/k8s-reactjs
         - home/app.bundle
@@ -54,6 +57,7 @@ data:
         repos:
         - barucijah/k8s-ci-cd
         - barucijah/k8s-app
+        - barucijah/k8s-nestjs
         - barucijah/k8s-node
         - barucijah/k8s-reactjs
         - home/app.bundle
