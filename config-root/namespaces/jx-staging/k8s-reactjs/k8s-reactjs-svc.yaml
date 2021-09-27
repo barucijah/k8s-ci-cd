@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: k8s-reactjs
   labels:
-    chart: "k8s-reactjs-0.0.2"
+    chart: "k8s-reactjs-0.0.3"
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'k8s-reactjs'
