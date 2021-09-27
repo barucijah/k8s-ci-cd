@@ -12,6 +12,10 @@ data:
       require_self_approval: true
     - lgtm_acts_as_approve: true
       repos:
+      - barucijah/k8s-nestjs
+      require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
       - barucijah/k8s-node
       require_self_approval: true
     - lgtm_acts_as_approve: true
@@ -38,6 +42,11 @@ data:
       - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
         name: lighthouse-webui-plugin
       barucijah/k8s-ci-cd:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
+      barucijah/k8s-nestjs:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
       - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
@@ -80,6 +89,22 @@ data:
       - pony
       barucijah/k8s-ci-cd:
       - config-updater
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
+      barucijah/k8s-nestjs:
       - approve
       - assign
       - blunderbuss
@@ -157,6 +182,9 @@ data:
       trusted_org: todo
     - repos:
       - barucijah/k8s-app
+      trusted_org: todo
+    - repos:
+      - barucijah/k8s-nestjs
       trusted_org: todo
     - repos:
       - barucijah/k8s-node
