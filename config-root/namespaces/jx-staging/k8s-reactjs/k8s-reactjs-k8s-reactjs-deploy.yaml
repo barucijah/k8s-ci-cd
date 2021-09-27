@@ -5,7 +5,7 @@ metadata:
   name: k8s-reactjs-k8s-reactjs
   labels:
     draft: draft-app
-    chart: "k8s-reactjs-0.0.2"
+    chart: "k8s-reactjs-0.0.4"
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'k8s-reactjs'
@@ -25,11 +25,11 @@ spec:
       serviceAccountName: k8s-reactjs-k8s-reactjs
       containers:
         - name: k8s-reactjs
-          image: "gcr.io/vocal-tracer-324708/k8s-reactjs:0.0.2"
+          image: "gcr.io/vocal-tracer-324708/k8s-reactjs:0.0.4"
           imagePullPolicy: IfNotPresent
           env:
             - name: VERSION
-              value: 0.0.2
+              value: 0.0.4
           envFrom: null
           ports:
             - name: http
