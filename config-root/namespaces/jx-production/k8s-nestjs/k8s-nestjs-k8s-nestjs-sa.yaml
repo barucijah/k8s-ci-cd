@@ -1,0 +1,10 @@
+# Source: k8s-nestjs/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: k8s-nestjs-k8s-nestjs
+  annotations:
+    meta.helm.sh/release-name: 'k8s-nestjs'
+  namespace: jx-production
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
