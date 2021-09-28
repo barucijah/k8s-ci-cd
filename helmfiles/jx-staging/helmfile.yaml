@@ -26,5 +26,9 @@ releases:
   namespace: jx-staging
   values:
   - jx-values.yaml
+- chart: dev/k8s-nestjs
+  version: 0.0.4
+  name: k8s-nestjs
+  namespace: jx-staging
 templates: {}
 renderedvalues: {}
