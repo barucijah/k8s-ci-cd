@@ -5,7 +5,7 @@ metadata:
   name: k8s-nestjs-k8s-nestjs
   labels:
     draft: draft-app
-    chart: "k8s-nestjs-0.0.4"
+    chart: "k8s-nestjs-0.0.7"
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'k8s-nestjs'
@@ -25,19 +25,29 @@ spec:
       serviceAccountName: k8s-nestjs-k8s-nestjs
       containers:
         - name: k8s-nestjs
-          image: "gcr.io/vocal-tracer-324708/k8s-nestjs:0.0.4"
+          image: "gcr.io/vocal-tracer-324708/k8s-nestjs:0.0.7"
           imagePullPolicy: IfNotPresent
           env:
             - name: VERSION
-              value: 0.0.4
+              value: 0.0.7
+            - name: DATABASE_HOST
+              value: "postgres-db-lb.jx-staging.svc.cluster.local"
+            - name: DATABASE_NAME
+              value: "app"
+            - name: DATABASE_PASSWORD
+              value: "postgres"
+            - name: DATABASE_PORT
+              value: "5432"
+            - name: DATABASE_USER
+              value: "postgres"
           envFrom: null
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 3000
           livenessProbe:
             httpGet:
               path: /
-              port: 8080
+              port: 3000
             initialDelaySeconds: 60
             periodSeconds: 10
             successThreshold: 1
@@ -45,7 +55,7 @@ spec:
           readinessProbe:
             httpGet:
               path: /
-              port: 8080
+              port: 3000
             periodSeconds: 10
             successThreshold: 1
             timeoutSeconds: 1
