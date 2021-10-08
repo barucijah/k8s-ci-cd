@@ -21,7 +21,7 @@ releases:
   values:
   - jx-values.yaml
 - chart: dev/k8s-reactjs
-  version: 0.0.6
+  version: 0.0.7
   name: k8s-reactjs
   namespace: jx-staging
   values:
